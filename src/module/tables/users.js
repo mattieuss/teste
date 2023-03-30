@@ -1,21 +1,27 @@
 const db = require('../database.js')
+const Sequelize = require('sequelize')
 
-db.define('users',{
+const userTable = db.define('users',{
     id:{
-        type:db.INTEGER,
+        type:Sequelize.INTEGER,
         primaryKey:true,
         allowNull:false,
         autoIncrement:true
     },
     nome:{
-        type:db.STRING,
+        type:Sequelize.STRING,
         allowNull:false
 
     },
     senha:{
-        type:db.STRING,
+        type:Sequelize.STRING,
+        allowNull:false
+    },
+    email:{
+        type:Sequelize.STRING,
         allowNull:false
     }
 })
 console.log('tabela criada')
-module.exports = db
+
+module.exports = userTable
