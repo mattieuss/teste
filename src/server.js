@@ -17,6 +17,7 @@ app.post('/cadastrar', (req, res)=>{
     usuario.email = req.body.email;
     usuario.senha  = req.body.senha;
     usuario.cadastrar(usuario.nome, usuario.email, usuario.senha)
+    
     console.log(req.body)
     res.sendStatus(200)
 })
