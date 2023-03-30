@@ -44,7 +44,7 @@ class Users{
     cadastrar(nome, email, senha){
         console.log(nome, email, senha)
         const cadastrar = async function (){
-            const cadastro = await userTable.create({
+            await userTable.create({
                 nome:`${nome}`,
                 email:`${email}`,
                 senha:`${senha}`
