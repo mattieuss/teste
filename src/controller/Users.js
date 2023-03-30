@@ -30,20 +30,20 @@ class Users{
         
         this._EMAIL = valor
     }
-    get senha(){
+    get senha(){   
         return this._SENHA
     }
-    set senha(valor){
+    set senha(valor){   
         if(valor.length<8){
             return;
         }
-        this._SENHA = valor
+        this._SENHA = valor    
     }
 
 
     cadastrar(nome, email, senha){
         console.log(nome, email, senha)
-        const cadastrar = async function (){
+        const cadastrar = async function (){        
             await userTable.create({
                 nome:`${nome}`,
                 email:`${email}`,
@@ -55,7 +55,7 @@ class Users{
             })
         }
         console.log(nome, email, senha)
-        cadastrar()
+        cadastrar()   
     }
 }
 module.exports = Users
