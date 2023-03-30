@@ -7,13 +7,9 @@ const app = express()
 const bp = require('body-parser')
 
 app.use(bp.json())
-app.set('port', config.port)
+
 app.get('/', (req, res)=>{
     res.send('hello world')
-})
-port = config.host.port
-app.listen(port,()=>{
-    console.log(`o servidor está rodando na porta${port} `)
 })
 
 app.post('/cadastrar', (req, res)=>{
@@ -23,4 +19,12 @@ app.post('/cadastrar', (req, res)=>{
     usuario.cadastrar(usuario.nome, usuario.email, usuario.senha)
     console.log(req.body)
     res.sendStatus(200)
+})
+
+
+
+
+port = config.host.port
+app.listen(port,()=>{
+    console.log(`o servidor está rodando na porta${port} `)
 })
